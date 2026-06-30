@@ -1,0 +1,81 @@
+/* src/components/Navbar.module.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: auto 1fr auto; 
+  align-items: center;
+  padding: 1.25rem 3rem;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid #E8DDD0;
+  gap: 2rem;
+}
+
+.navLogo {
+  justify-self: start;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3A2A20;
+  text-decoration: none;
+}
+
+.navLogo span {
+  color: #A87060;
+  font-style: italic;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.navLinks a, .navItemDisabled {
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B4A38;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.navLinks a:hover {
+  color: #A87060;
+}
+
+.navItemDisabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.langSwitcher {
+  justify-self: end;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: #6B4A38;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* adaptive for mobile */
+@media (max-width: 768px) {
+  .navbar { 
+    display: flex;
+    justify-content: space-between; 
+    padding: 1rem 1.5rem; 
+  }
+  .navLinks { display: none; }
+}

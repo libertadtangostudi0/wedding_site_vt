@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "gallery": "Ảnh",
+    "services": "Dịch vụ",
+    "contact": "Liên hệ"
+  },
+  "gallery": {
+    "title": "Bộ sưu tập đầy đủ",
+    "subtitle": "Bộ sưu tập những tác phẩm tốt nhất của chúng tôi"
+  },
+  "hero": {
+    "eyebrow": "Xuyên Mộc · Vietnam",
+    "title": "Váy cưới <em>tinh tế</em>",
+    "subtitle": "Mỗi khoảnh khắc yêu thương đều xứng đáng được ghi lại theo cách đẹp nhất — tinh tế, chân thực, và mãi mãi.",
+    "cta": "Đặt lịch thử váy"
+  },
+  "about": {
+    "eyebrow": "Về chúng tôi",
+    "title": "Ghi lại tình yêu<br>theo cách<br><em>riêng của bạn</em>",
+    "body": "BI Wedding là studio chụp ảnh cưới tại Xuyên Mộc, chuyên ghi lại những khoảnh khắc đẹp nhất trong ngày trọng đại của bạn...",
+    "stats": {
+      "posts": "bài đăng",
+      "followers": "người theo dõi",
+      "love": "tình yêu"
+    }
+  }
+}

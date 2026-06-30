@@ -1,0 +1,15 @@
+/* src/pages/Home.module.css */
+.homePage {
+  padding-top: 80px;
+}
+
+.homeGallery {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.homeGallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--bark);
+}

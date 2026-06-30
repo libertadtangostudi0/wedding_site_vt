@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "gallery": "Collection",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "gallery": {
+    "title": "Full Gallery",
+    "subtitle": "Collection of our best works"
+  },
+  "hero": {
+    "eyebrow": "Xuyên Mộc · Vietnam",
+    "title": "<em>Exquisite</em> Wedding Gowns",
+    "subtitle": "Every moment of love deserves to be captured in the most beautiful way — sophisticated, authentic, and forever.",
+    "cta": "Book a consultation"
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "Capturing love<br>in <em>your own way</em>",
+    "body": "BI Wedding is a wedding photography studio in Xuyen Moc, dedicated to capturing the most beautiful moments on your big day...",
+    "stats": {
+      "posts": "posts",
+      "followers": "followers",
+      "love": "love"
+    }
+  }
+}
