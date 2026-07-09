@@ -25,5 +25,10 @@
       "followers": "followers",
       "love": "love"
     }
+  },
+  "aboutUs": {
+    "eyebrow": "Get in touch",
+    "title": "Follow our journey",
+    "body": "Placeholder copy: follow us on social media for behind-the-scenes moments, new galleries, and upcoming availability."
   }
 }

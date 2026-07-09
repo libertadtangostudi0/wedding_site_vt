@@ -25,5 +25,10 @@
       "followers": "người theo dõi",
       "love": "tình yêu"
     }
+  },
+  "aboutUs": {
+    "eyebrow": "Ket noi voi chung toi",
+    "title": "Theo doi hanh trinh cua chung toi",
+    "body": "Noi dung tam thoi: theo doi chung toi tren mang xa hoi de xem hau truong, bo suu tap moi va lich hen sap toi."
   }
 }
