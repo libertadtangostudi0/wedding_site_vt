@@ -1,41 +1,35 @@
 // src/pages/Home.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar } from '../components/Navbar';
+import { useTranslation } from 'react-i18next';
 import { Hero } from '../components/Hero/Hero';
 import { About } from '../components/About/About';
 import { GalleryGrid } from '../components/Gallery/GalleryGrid';
-import { useTranslation } from '../hooks/useTranslation';
+import { useLangParam } from '../hooks/useLangParam';
+import { buildLocalizedPath } from '../utils/buildLocalizedPath';
 
-
-
+// Navbar/Footer are NOT rendered here anymore: AppLayout owns them.
+// Language also comes from the URL (via useLangParam), not from a local
+// useState — that duplication was what caused Home to silently fall
+// back to Vietnamese regardless of what the Navbar showed.
 export const Home = () => {
-
-  const [lang, setLang] = useState<'vi' | 'en'>('vi');
-  const { t } = useTranslation(lang);
-  if (t('nav.about') === '...') return <div>Loading...</div>;
+  const { lang } = useLangParam();
+  const { t } = useTranslation();
 
   return (
     <div className="home-page">
-      <Navbar t={t} onLangChange={setLang} currentLang={lang} />
-      
       <main>
         <Hero t={t} />
         <About t={t} />
-        
+
         <section className="home-gallery">
           <h2>{t('gallery.title')}</h2>
           <GalleryGrid limit={4} />
-          <Link to="/gallery" className="view-more-btn">
+          <Link to={buildLocalizedPath(lang, 'gallery')} className="view-more-btn">
             {t('gallery.viewMore')}
           </Link>
         </section>
-
       </main>
-      
-      <footer>
-
-      </footer>
     </div>
   );
 };

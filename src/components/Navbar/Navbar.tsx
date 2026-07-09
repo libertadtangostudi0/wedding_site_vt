@@ -1,33 +1,44 @@
-// src/components/Navbar.tsx
+// src/components/Navbar/Navbar.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import { buildLocalizedPath, replaceLangInPath } from '../../utils/buildLocalizedPath';
+import type { SupportedLanguage } from '../../constants/i18n';
 
 interface NavbarProps {
   t: (key: string) => string;
-  onLangChange: (lang: 'vi' | 'en') => void;
-  currentLang: 'vi' | 'en';
+  currentLang: SupportedLanguage;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ t, onLangChange, currentLang }) => {
+export const Navbar: React.FC<NavbarProps> = ({ t, currentLang }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLangChange = (nextLang: SupportedLanguage) => {
+    // The URL is the single source of truth for language: switching the
+    // dropdown navigates to the same page under the new /:lang prefix
+    // instead of mutating some local component state.
+    navigate(replaceLangInPath(location.pathname, nextLang));
+  };
+
   return (
     <nav className={styles.navbar}>
-      <Link to="/home" className={styles.navLogo}>
+      <Link to={buildLocalizedPath(currentLang, 'home')} className={styles.navLogo}>
         B<span>·I</span> Wedding
       </Link>
-      
+
       <div className={styles.navLinks}>
-        <Link to="/home">{t('nav.home')}</Link>
-        <Link to="/gallery">{t('nav.gallery')}</Link>
+        <Link to={buildLocalizedPath(currentLang, 'home')}>{t('nav.home')}</Link>
+        <Link to={buildLocalizedPath(currentLang, 'gallery')}>{t('nav.gallery')}</Link>
         <span className={styles.navItemDisabled}>{t('nav.about')}</span>
         <span className={styles.navItemDisabled}>{t('nav.services')}</span>
         <span className={styles.navItemDisabled}>{t('nav.contact')}</span>
       </div>
 
-      <select 
+      <select
         className={styles.langSwitcher}
-        value={currentLang} 
-        onChange={(e) => onLangChange(e.target.value as 'vi' | 'en')}
+        value={currentLang}
+        onChange={(e) => handleLangChange(e.target.value as SupportedLanguage)}
       >
         <option value="vi">VI</option>
         <option value="en">EN</option>
