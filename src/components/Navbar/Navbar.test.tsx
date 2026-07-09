@@ -21,6 +21,12 @@ describe('Navbar', () => {
     expect(screen.getByRole('link', { name: 'nav.gallery' })).toHaveAttribute('href', '/vi/gallery');
   });
 
+  it('builds the About Us link pointing to Home with the #about-us anchor', () => {
+    renderWithProviders(<Navbar t={t} currentLang="en" />, { initialEntries: ['/en/gallery'] });
+
+    expect(screen.getByRole('link', { name: 'nav.about' })).toHaveAttribute('href', '/en/home#about-us');
+  });
+
   it('switching language navigates to the same page under the new :lang segment', async () => {
     const user = userEvent.setup();
 

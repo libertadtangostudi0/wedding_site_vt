@@ -38,7 +38,7 @@ const SocialIcon: React.FC<{ id: SocialLink['id'] }> = ({ id }) => {
 
 export const AboutUs: React.FC<AboutUsProps> = ({ t, socialLinks }) => {
   return (
-    <section className={styles.aboutUsSection} aria-labelledby="about-us-heading">
+    <section id="about-us" className={styles.aboutUsSection} aria-labelledby="about-us-heading">
       <p className={styles.eyebrow}>{t('aboutUs.eyebrow')}</p>
       <h2 id="about-us-heading" className={styles.title}>
         {t('aboutUs.title')}

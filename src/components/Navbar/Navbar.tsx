@@ -30,7 +30,9 @@ export const Navbar: React.FC<NavbarProps> = ({ t, currentLang }) => {
       <div className={styles.navLinks}>
         <Link to={buildLocalizedPath(currentLang, 'home')}>{t('nav.home')}</Link>
         <Link to={buildLocalizedPath(currentLang, 'gallery')}>{t('nav.gallery')}</Link>
-        <span className={styles.navItemDisabled}>{t('nav.about')}</span>
+        <Link to={{ pathname: buildLocalizedPath(currentLang, 'home'), hash: 'about-us' }}>
+          {t('nav.about')}
+        </Link>
         <span className={styles.navItemDisabled}>{t('nav.services')}</span>
         <span className={styles.navItemDisabled}>{t('nav.contact')}</span>
       </div>

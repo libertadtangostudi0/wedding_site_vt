@@ -7,6 +7,7 @@ import { About } from '../components/About/About';
 import { AboutUs, type SocialLink } from '../components/AboutUs';
 import { GalleryGrid } from '../components/Gallery/GalleryGrid';
 import { useLangParam } from '../hooks/useLangParam';
+import { useScrollToHash } from '../hooks/useScrollToHash';
 import { buildLocalizedPath } from '../utils/buildLocalizedPath';
 
 // Placeholder data — swap these URLs for the real profile links whenever
@@ -23,6 +24,7 @@ const SOCIAL_LINKS: SocialLink[] = [
 export const Home = () => {
   const { lang } = useLangParam();
   const { t } = useTranslation();
+  useScrollToHash();
 
   return (
     <div className="home-page">
